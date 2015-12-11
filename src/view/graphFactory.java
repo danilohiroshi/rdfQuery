@@ -105,15 +105,26 @@ public class graphFactory
 								
 								if (n.getProperty().equals("http://dbpedia.org/ontology/abstract") ) {
 									//System.out.println("["+n.getValue()+"]");
-									text += " Description: "+n.getValue() + "\n";
+									text += " Description: "+n.getValue() + "\n-------------------\n";
 									aux = true;
 								}
 								
 							}
 						}
 						if (aux) {
-							JOptionPane.showMessageDialog(null, text);
+							JFrame box = new JFrame("Description");
+							box.setSize(1024, 720);
 							
+							JTextArea t = new JTextArea();
+							t.setText(text);
+							
+							JPanel container = new JPanel();
+							container.add(t);
+							JScrollPane jsp = new JScrollPane(container);
+							box.add(jsp);
+
+							
+							box.setVisible(true);
 						}
 			        }	
 				}
