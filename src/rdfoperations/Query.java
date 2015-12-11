@@ -132,7 +132,8 @@ public class Query {
 				input.equals("http://dbpedia.org/property/state")||
 				input.equals("http://dbpedia.org/property/city")||
 				input.equals("http://dbpedia.org/property/rector")||
-				input.equals("http://dbpedia.org/property/established")
+				input.equals("http://dbpedia.org/property/established")||
+				input.equals("http://www.w3.org/2000/01/rdf-schema#seeAlso")
 				) {
 			return true;
 		}
