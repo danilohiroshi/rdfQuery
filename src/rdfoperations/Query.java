@@ -128,7 +128,11 @@ public class Query {
 				input.equals("http://dbpedia.org/property/writer") ||
 				input.equals("http://dbpedia.org/property/director") ||
 				input.equals("http://dbpedia.org/property/music") ||
-				input.equals("http://dbpedia.org/property/occupation")
+				input.equals("http://dbpedia.org/property/occupation")||
+				input.equals("http://dbpedia.org/property/state")||
+				input.equals("http://dbpedia.org/property/city")||
+				input.equals("http://dbpedia.org/property/rector")||
+				input.equals("http://dbpedia.org/property/established")
 				) {
 			return true;
 		}
