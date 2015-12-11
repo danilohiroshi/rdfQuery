@@ -133,7 +133,11 @@ public class Query {
 				input.equals("http://dbpedia.org/property/city")||
 				input.equals("http://dbpedia.org/property/rector")||
 				input.equals("http://dbpedia.org/property/established")||
-				input.equals("http://www.w3.org/2000/01/rdf-schema#seeAlso")
+				input.equals("http://www.w3.org/2000/01/rdf-schema#seeAlso")||
+				input.equals("http://dbpedia.org/property/origin")||
+				input.equals("http://dbpedia.org/property/genre")||
+				input.equals("http://dbpedia.org/property/dateOfBirth")||
+				input.equals("http://dbpedia.org/ontology/associatedMusicalArtist")
 				) {
 			return true;
 		}
