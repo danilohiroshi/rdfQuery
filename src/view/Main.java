@@ -74,7 +74,7 @@ public class Main extends JFrame {
 				
 				Object parent = g.getDefaultParent();
 				JFrame f = new JFrame("Resultado");
-				
+
 				//get list
 				ArrayList<Node> list = new ArrayList<Node>();
 				Query q = new Query();
@@ -96,7 +96,8 @@ public class Main extends JFrame {
 				}
 				f.setSize(new Dimension(1000, 1000));
 				Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-				f.setLocation(dim.width/2-f.getSize().width/2, dim.height/2-f.getSize().height/2);
+				//f.setLocation(dim.width/2-f.getSize().width/2, dim.height/2-f.getSize().height/2);
+				f.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 				f.setVisible(true);
 			}
 		});
