@@ -81,15 +81,16 @@ public class Main extends JFrame {
 				String aux = q.query(value);
 				//String aux = q.query("Silvio Santos");
 				list = q.queryIsValueOf("<"+aux+">");
-				
+				Object[] list2 = new Object[100];
 				Object father = graphFactory.newNode(g, parent,f, aux,100,500,null,"");
+				list2[1] = father;
 				int i = 2;
 				for (Node n : list) {
 					if (n.getValue() != "" && n.getValue() != null) {
 						System.out.println("["+n.getProperty() + "] -> ["+n.getValue()+"]");
 						if (q.filtro(n.getProperty())) {
 							System.out.println("ENTROU");
-							graphFactory.newNode(g, parent,f, n.getValue(),500,60*i,father,q.normalize(n.getProperty()));
+							list2[i] = graphFactory.newNode(g, parent,f, n.getValue(),500,60*i,father,q.normalize(n.getProperty()));
 							i++;
 						}
 					}

@@ -137,7 +137,8 @@ public class Query {
 				input.equals("http://dbpedia.org/property/origin")||
 				input.equals("http://dbpedia.org/property/genre")||
 				input.equals("http://dbpedia.org/property/dateOfBirth")||
-				input.equals("http://dbpedia.org/ontology/associatedMusicalArtist")
+				input.equals("http://dbpedia.org/ontology/associatedMusicalArtist")||
+				input.equals("http://dbpedia.org/property/system")
 				) {
 			return true;
 		}

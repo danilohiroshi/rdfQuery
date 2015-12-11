@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Panel;
 import java.awt.event.MouseAdapter;
@@ -8,7 +9,13 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Random;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.util.mxConstants;
@@ -38,6 +45,7 @@ public class graphFactory
 			if (father == null) {
 				
 				v1 = graph.insertVertex(parent, null, name,  x, y, name.length()*6, 50,"ROUNDED;strokeColor=red;");
+				
 			}else{
 				
 				v1 = graph.insertVertex(parent, null, name, x, y, name.length()*6, 50,"ROUNDED;strokeColor=blue;");
@@ -57,6 +65,7 @@ public class graphFactory
 		
 			public void mouseReleased(MouseEvent e)
 			{
+				
 				if (e.getClickCount() == 2 && !e.isConsumed()) {
 				     e.consume();
 				     //handle double click event.
@@ -80,7 +89,34 @@ public class graphFactory
 							}
 						}
 					}
-				}	
+				}else{
+					Object cell = graphComponent.getCellAt(e.getX(), e.getY());
+					if (e.getButton() == e.BUTTON3)
+			        {
+						 e.consume();
+						//right button
+						ArrayList<Node> list = new ArrayList<Node>();
+						Query q = new Query();
+						list = q.queryIsValueOf("<"+graph.getLabel(cell)+">");
+						Boolean aux = false;
+						String text = "";
+						for (Node n : list) {
+							if (n.getValue() != "" && n.getValue() != null) {
+								
+								if (n.getProperty().equals("http://dbpedia.org/ontology/abstract") ) {
+									//System.out.println("["+n.getValue()+"]");
+									text += " Description: "+n.getValue() + "\n";
+									aux = true;
+								}
+								
+							}
+						}
+						if (aux) {
+							JOptionPane.showMessageDialog(null, text);
+							
+						}
+			        }	
+				}
 			}
 		});
 		f.add(graphComponent);
