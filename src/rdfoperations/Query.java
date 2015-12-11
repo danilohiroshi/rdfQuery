@@ -109,22 +109,26 @@ public class Query {
 		if (input.equals("http://xmlns.com/foaf/0.1/homepage") ||
 				input.equals("http://dbpedia.org/property/placeOfBirth") ||
 				input.equals("http://dbpedia.org/ontology/country") ||
-				input.equals("http://dbpedia.org/ontology/populationTotal") ||
+				input.equals("http://dbpedia.org/ontology/wikiPageDisambiguates") ||
 				input.equals("http://dbpedia.org/property/knownFor") ||
 				input.equals("http://dbpedia.org/property/nationality") ||
 				input.equals("http://dbpedia.org/property/occupation") ||
 				input.equals("http://dbpedia.org/ontology/capital") ||
 				input.equals("http://dbpedia.org/ontology/officialLanguage") ||
 				input.equals("http://dbpedia.org/ontology/wikiPageRedirects") ||
-				//input.equals("http://dbpedia.org/ontology/languageFamily") ||
+				input.equals("http://dbpedia.org/property/foundation") ||
 				input.equals("http://www.w3.org/2000/01/rdf-schema#subClassOf") ||
 				input.equals("http://dbpedia.org/property/title") ||
-				//input.equals("http://dbpedia.org/property/parents") ||
-				//input.equals("http://dbpedia.org/property/homeTown") ||
-				//input.equals("http://dbpedia.org/property/education") ||
+				input.equals("http://dbpedia.org/property/founder") ||
+				input.equals("http://dbpedia.org/ontology/product") ||
+				input.equals("http://www.w3.org/ns/prov#wasDerivedFrom") ||
 				input.equals("http://dbpedia.org/property/children") ||
 				input.equals("http://dbpedia.org/property/birthName") ||
-				input.equals("http://www.w3.org/2004/02/skos/core#broader")
+				input.equals("http://www.w3.org/2004/02/skos/core#broader") ||
+				input.equals("http://dbpedia.org/property/writer") ||
+				input.equals("http://dbpedia.org/property/director") ||
+				input.equals("http://dbpedia.org/property/music") ||
+				input.equals("http://dbpedia.org/property/occupation")
 				) {
 			return true;
 		}
